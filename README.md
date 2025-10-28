@@ -8,7 +8,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat)](LICENSE)
 
-[Features](#features) • [Getting Started](#getting-started) • [Architecture](#architecture) • [Documentation](#documentation)
+### [🚀 Live Demo](https://hirelens-sigma.vercel.app/) | [📖 Documentation](#documentation)
+
+[![Deploy to Vercel](https://img.shields.io/badge/Deploy%20to-Vercel-black?style=for-the-badge&logo=vercel)](https://hirelens-sigma.vercel.app/)
+
+[Features](#features) • [Getting Started](#getting-started) • [Architecture](#architecture) • [Troubleshooting](#troubleshooting)
 
 </div>
 
