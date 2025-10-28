@@ -85,10 +85,11 @@ export function FileDropzone({
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
+        aria-label="Upload CV file"
       >
         <div className="flex flex-col items-center justify-center pt-5 pb-6">
           <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-            <Upload className="w-8 h-8 text-blue-600" />
+            <Upload className="w-8 h-8 text-blue-600" aria-hidden="true" />
           </div>
           <p className="mb-2 text-sm text-gray-700">
             <span className="font-semibold text-blue-600">Click to upload</span> or drag and drop
@@ -102,6 +103,7 @@ export function FileDropzone({
           className="hidden"
           accept={accept}
           onChange={handleFileInput}
+          aria-label="File upload input"
         />
       </label>
       {error && (

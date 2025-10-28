@@ -41,6 +41,8 @@ export function KanbanColumn({
       className={cn('flex flex-col gap-4 min-h-[400px]', className)}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
+      role="region"
+      aria-label={`${title} column with ${candidates.length} candidates`}
     >
       <div className="flex items-center justify-between px-1">
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
@@ -60,6 +62,9 @@ export function KanbanColumn({
               draggable
               onDragStart={(e) => handleDragStart(e, candidate.id)}
               className="cursor-move transition-transform hover:scale-102"
+              role="button"
+              tabIndex={0}
+              aria-label={`Move ${candidate.name} to another stage`}
             >
               <CandidateCard candidate={candidate} />
             </div>

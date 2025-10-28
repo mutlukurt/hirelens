@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: 'HireLens - Professional HR Matching',
   description: 'Modern HR matching dashboard for talent acquisition',
   manifest: '/manifest.webmanifest',
+  themeColor: '#4A9EFF',
+  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({

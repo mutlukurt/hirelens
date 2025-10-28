@@ -156,35 +156,35 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      <div className="bg-white border-b border-gray-200 shadow-sm">
+      <header className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+          <nav className="flex items-center justify-between" aria-label="Main navigation">
             <LogoWithText />
             <div className="flex gap-3">
               <Button variant="outline" asChild>
-                <a href="/jobs">
-                  <Briefcase className="w-4 h-4 mr-2" />
+                <a href="/jobs" aria-label="View jobs page">
+                  <Briefcase className="w-4 h-4 mr-2" aria-hidden="true" />
                   Jobs
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="/settings">
-                  <Settings className="w-5 h-5" />
+                <a href="/settings" aria-label="Open settings">
+                  <Settings className="w-5 h-5" aria-hidden="true" />
                 </a>
               </Button>
             </div>
-          </div>
+          </nav>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto p-6 space-y-8">{''}
+      <main className="max-w-7xl mx-auto p-6 space-y-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section aria-label="Dashboard statistics" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="border-none shadow-md bg-white hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Total Candidates</CardTitle>
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                <Users className="h-5 w-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center" aria-hidden="true">
+                <Users className="h-5 w-5 text-blue-600" aria-hidden="true" />
               </div>
             </CardHeader>
             <CardContent>
@@ -196,8 +196,8 @@ export default function Dashboard() {
           <Card className="border-none shadow-md bg-white hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Active Jobs</CardTitle>
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <Briefcase className="h-5 w-5 text-green-600" />
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center" aria-hidden="true">
+                <Briefcase className="h-5 w-5 text-green-600" aria-hidden="true" />
               </div>
             </CardHeader>
             <CardContent>
@@ -209,8 +209,8 @@ export default function Dashboard() {
           <Card className="border-none shadow-md bg-white hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">Avg Match Score</CardTitle>
-              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                <TrendingUp className="h-5 w-5 text-purple-600" />
+              <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center" aria-hidden="true">
+                <TrendingUp className="h-5 w-5 text-orange-600" aria-hidden="true" />
               </div>
             </CardHeader>
             <CardContent>
@@ -218,12 +218,13 @@ export default function Dashboard() {
               <p className="text-xs text-gray-500 mt-1">average compatibility</p>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
+        <section aria-label="Upload resume">
         <Card className="border-none shadow-md bg-white">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-gray-900">
-              <Upload className="h-5 w-5 text-blue-600" />
+              <Upload className="h-5 w-5 text-blue-600" aria-hidden="true" />
               Upload Resume
             </CardTitle>
             <p className="text-sm text-gray-600 mt-1">
@@ -233,15 +234,16 @@ export default function Dashboard() {
           <CardContent>
             <FileDropzone onFileSelect={handleFileSelect} />
             {isUploading && (
-              <div className="mt-4 flex items-center justify-center gap-2">
-                <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+              <div className="mt-4 flex items-center justify-center gap-2" role="status" aria-live="polite">
+                <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" aria-hidden="true" />
                 <p className="text-sm text-gray-600">Processing resume...</p>
               </div>
             )}
           </CardContent>
         </Card>
+        </section>
 
-        <div>
+        <section aria-label="Candidate pipeline">
           <h2 className="text-2xl font-bold mb-6 text-gray-900">Candidate Pipeline</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <KanbanColumn
@@ -263,8 +265,8 @@ export default function Dashboard() {
               onCandidateMove={handleCandidateMove}
             />
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }

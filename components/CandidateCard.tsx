@@ -30,31 +30,32 @@ export function CandidateCard({
             <Link
               href={`/candidates/${candidate.id}`}
               className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+              aria-label={`View details for ${candidate.name}`}
             >
               {candidate.name}
             </Link>
             <div className="mt-2 space-y-1 text-sm text-gray-600">
               {candidate.email && (
                 <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 flex-shrink-0 text-gray-400" />
+                  <Mail className="w-4 h-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
                   <span className="truncate">{candidate.email}</span>
                 </div>
               )}
               {candidate.phone && (
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 flex-shrink-0 text-gray-400" />
+                  <Phone className="w-4 h-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
                   <span>{candidate.phone}</span>
                 </div>
               )}
               {candidate.location && (
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 flex-shrink-0 text-gray-400" />
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
                   <span>{candidate.location}</span>
                 </div>
               )}
               {candidate.yearsExperience > 0 && (
                 <div className="flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 flex-shrink-0 text-gray-400" />
+                  <Briefcase className="w-4 h-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
                   <span>{candidate.yearsExperience} years experience</span>
                 </div>
               )}
